@@ -91,7 +91,7 @@ public class MapsActivity extends AppCompatActivity
 
     @Override
     public void onMyLocationClick(@NonNull Location location) {
-        Toast.makeText(this, "Current location:\n" + location, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Current location is here", Toast.LENGTH_LONG).show();
     }
 
     @Override
