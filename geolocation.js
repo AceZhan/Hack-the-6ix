@@ -3,6 +3,7 @@ var apiKey = 'AIzaSyCfIC5CXlJ1mDF7tNITPn6iFPbdV-j2Lbk';
 var map;
 var drawingManager;
 var placeIdArray = [];
+var currentPos;
 var polylines = [];
 var snappedCoordinates = [];
 
@@ -29,7 +30,7 @@ function initialize() {
 
         var marker = new google.maps.Marker({position: pos, map: map});
         
-        
+        currentPos = pos;
         }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -74,9 +75,14 @@ function initialize() {
   // Snap-to-road when the polyline is completed.
   drawingManager.addListener('polylinecomplete', function(poly) {
     var path = poly.getPath();
+    /* for (var i = path.length(); i > 0; i--) {
+      path[i] = path[i-1];
+    }
+    path[0] = {lat: currentPos.lat(), lng: currentPos.lng()}; */
     polylines.push(poly);
     placeIdArray = [];
     runSnapToRoad(path);
+    console.log(path); 
   });
 
   // Clear button. Click to remove all polylines.
@@ -193,7 +199,6 @@ function processSpeedLimitResponse(speedData, start) {
 }
 function calculateDistance(){
   totalDistance = 0;
-  totalDistance = document.getElementById('distance'); 
 	//console.log(snappedCoordinates.length)
 	for (var i = 0; i < snappedCoordinates.length - 1; i++) {
         var coords = [snappedCoordinates[i].lat(), snappedCoordinates[i].lng()];
@@ -201,7 +206,8 @@ function calculateDistance(){
 		totalDistance += getDistanceFromLatLonInKm(coords[0], coords_2[0], coords[1], coords_2[1]);
   }
     console.log(totalDistance);
-    return totalDistance;
+    var n = totalDistance.toPrecision(3);
+    return n;
 }
 function getDistanceFromLatLonInKm(lat1,lat2,lon1,lon2) {
   var R = 6371; // Radius of the earth in km
