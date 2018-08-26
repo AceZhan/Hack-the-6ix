@@ -1,0 +1,22 @@
+{
+  "name": "hack-the-6ix",
+  "version": "1.0.0",
+  "description": "everything hurts",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azzhan/Hack-the-6ix.git"
+  },
+  "author": "ace mel jef",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azzhan/Hack-the-6ix/issues"
+  },
+  "homepage": "https://github.com/azzhan/Hack-the-6ix#readme",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
