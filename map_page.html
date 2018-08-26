@@ -5,18 +5,23 @@
     <title>Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli|Ubuntu" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
 </head>
 
 <body>
-    <h1> Plan your running route.</h1> 
-    <div id="map" ></div>
-
-    <button type="button" onclick="document.getElementById('demo').innerHTML = calculateDistance()"> Distance travelled: </button>
+    <h1> Plan your running route.</h1>
+    <div id="inline">
+      <a href="index.html"> Back </a>
+      <button type="button" id="clear"> Clear </button>
+    </div>
+    <br> <br>
+    <div id="map"> </div>
+    <br> <br>
+    <button type="button" onclick="document.getElementById('dis').innerHTML = 'Distance travelled:   ' + calculateDistance() + ' km'" id="dis"> Distance travelled: </button>
     <p id="demo"></p>
-
+    <br> <br>
 <p id="demo"></p>
     <script language="JavaScript" type="text/javascript" src=".\node_modules\jquery\dist\jquery.js"> </script>
 		<script language="JavaScript" type="text/javascript" src="geolocation.js"> </script>
