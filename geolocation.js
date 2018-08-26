@@ -66,8 +66,8 @@ function initialize() {
         google.maps.drawing.OverlayType.POLYLINE
       ]
     },
-    polylineOptions: {
-      strokeColor: '#696969',
+    polygonOptions: {
+      strokeColor: 'black',
       strokeWeight: 2
     }
   });
@@ -90,6 +90,7 @@ function initialize() {
     for (var i = 0; i < polylines.length; ++i) {
       polylines[i].setMap(null);
     }
+	polylines.setMap(null);
     polylines = [];
     ev.preventDefault();
     return false;
@@ -139,8 +140,8 @@ function processSnapToRoadResponse(data) {
 function drawSnappedPolyline() {
   var snappedPolyline = new google.maps.Polyline({
     path: snappedCoordinates,
-    strokeColor: 'black',
-    strokeWeight: 3
+    strokeColor: 'green',
+    strokeWeight: 7
   });
 
   //console.log(snappedCoordinates[0].lat());
