@@ -136,8 +136,10 @@ function drawSnappedPolyline() {
     strokeColor: 'black',
     strokeWeight: 3
   });
-  //console.log(snappedCoordinates);
-  console.log(snappedCoordinates[0].lat);
+
+  //console.log(snappedCoordinates[0].lat());
+  //console.log(snappedCoordinates[0].lng());
+
   snappedPolyline.setMap(map);
   polylines.push(snappedPolyline);
 }
@@ -190,12 +192,16 @@ function processSpeedLimitResponse(speedData, start) {
   }
 }
 function calculateDistance(){
-	totalDistance = 0;
-	console.log(snappedCoordinates.length)
+  totalDistance = 0;
+  totalDistance = document.getElementById('distance'); 
+	//console.log(snappedCoordinates.length)
 	for (var i = 0; i < snappedCoordinates.length - 1; i++) {
-		var coords = snappedCoordinates.slice(i, i + 2);
-	//	totalDistance += getDistanceFromLatLonInKm(
-	}
+        var coords = [snappedCoordinates[i].lat(), snappedCoordinates[i].lng()];
+        var coords_2 = [snappedCoordinates[i+1].lat(), snappedCoordinates[i+1].lng()];
+		totalDistance += getDistanceFromLatLonInKm(coords[0], coords_2[0], coords[1], coords_2[1]);
+  }
+    console.log(totalDistance);
+    return totalDistance;
 }
 function getDistanceFromLatLonInKm(lat1,lat2,lon1,lon2) {
   var R = 6371; // Radius of the earth in km
@@ -208,7 +214,7 @@ function getDistanceFromLatLonInKm(lat1,lat2,lon1,lon2) {
     ; 
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
   var d = R * c; // Distance in km
-  return d;
+  return Math.abs(d);
 }
 
 function deg2rad(deg) {
