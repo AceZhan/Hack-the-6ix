@@ -4,8 +4,9 @@
     <title>Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <style>
-        
+
         #map {
         height: 75%;
         width: 75%;
@@ -20,8 +21,10 @@
 
         h1 {
           text-align: center;
+          font-family: 'Ubuntu', sans-serif;
         }
-      </style>
+
+    </style>
 </head>
 
 <body>
@@ -29,6 +32,7 @@
         <div id="map" ></div>
         <script src="geolocation.js"> </script>
         <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfIC5CXlJ1mDF7tNITPn6iFPbdV-j2Lbk&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfIC5CXlJ1mDF7tNITPn6iFPbdV-j2Lbk&callback=initMap&libraries=geometry">
         </script>
+
 </body>
