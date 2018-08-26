@@ -1,0 +1,63 @@
+#map {
+    height: 75%;
+    width: 70%;
+    margin-left: 50px;
+    /*: auto; */
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("assets/sunny-background.jpg");
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h2 {
+    text-align: center; 
+    font-family: 'Lobster', cursive;
+    font-size: 100%;
+}
+
+a.button {
+    color: white;
+    background-color: rgb(11, 136, 253); 
+    border: none;
+    padding: 10px 60px; 
+    border-radius: 30px; 
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    display: inline-block;
+    margin-left: 550px;
+    /* second margin is between buttons, third is underneath */
+    cursor: pointer;
+}
+
+h1.name {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 200%;
+}
+
+.noscroll { 
+    overflow: hidden;
+
+  }
+  
+.overlay { 
+    position: fixed; 
+    overflow-y: scroll;
+    top: 0; right: 0; bottom: 0; left: 0; 
+
+}
