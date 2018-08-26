@@ -8,8 +8,8 @@ var destinations = [];
 function initMap() {
     //initial position of map
     map = new google.maps.Map(document.getElementById('map'), {
-        //Canada 56.1304° N, 106.3468° W
-        center: {lat: 51.2538, lng: -85.3232},
+        //Toronto 43.6532° N, 79.3832° W
+        center: {lat: 43.6532, lng: -79.3832},
         zoom: 15
     });
     infoWindow = new google.maps.InfoWindow;
