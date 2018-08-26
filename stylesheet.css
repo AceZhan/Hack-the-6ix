@@ -5,6 +5,36 @@
     /*: auto; */
 }
 
+#clear {
+    margin-left: 420px;
+    background-image: linear-gradient(rgb(161, 26, 240), rgb(63, 12, 245)); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Muli', sans-serif;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#dis {
+    margin-left: 50px; 
+    background-image: linear-gradient(rgb(161, 26, 240), rgb(63, 12, 245)); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Muli', sans-serif;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#inline {
+    display: inline-block;
+}
+
 html {
     height: 100%;
     margin: 0;
@@ -25,7 +55,7 @@ h1 {
 
 h2 {
     text-align: center; 
-    font-family: 'Lobster', cursive;
+    font-family: 'Muli', sans-serif;
     font-size: 100%;
 }
 
