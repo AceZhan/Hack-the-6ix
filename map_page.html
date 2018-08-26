@@ -11,9 +11,14 @@
 </head>
 
 <body>
-        <h1> Plan your running route.</h1> 
-        <div id="map" ></div>
-        <script language="JavaScript" type="text/javascript" src=".\node_modules\jquery\dist\jquery.js"> </script>
+    <h1> Plan your running route.</h1> 
+    <div id="map" ></div>
+
+    <button type="button" onclick="document.getElementById('demo').innerHTML = calculateDistance()"> Distance travelled: </button>
+    <p id="demo"></p>
+
+<p id="demo"></p>
+    <script language="JavaScript" type="text/javascript" src=".\node_modules\jquery\dist\jquery.js"> </script>
 		<script language="JavaScript" type="text/javascript" src="geolocation.js"> </script>
 		<script async defer
 		src="https://maps.googleapis.com/maps/api/js?libraries=drawing,places">
