@@ -10,6 +10,7 @@
           zoom: 15
         });
 
+        //creates marker where user clicks
         google.maps.event.addListener(map, "click", function(event) {
             marker = new google.maps.Marker({
               position: event.latLng,
@@ -47,7 +48,7 @@
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
+                              'Error: The Geolocation service failed. Please refresh and allow access to your location.' :
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
