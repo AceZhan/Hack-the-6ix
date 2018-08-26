@@ -5,14 +5,8 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 75%;
-        width: 75%;
-        margin: auto;
-      }
-      /* Optional: Makes the sample page fill the window. */
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
       html, body {
         height: 100%;
         margin: 0;
@@ -21,15 +15,16 @@
 
       h1 {
           text-align: center;
+          font-family: 'Ubuntu', sans-serif;
       }
     </style>
   </head>
   <body>
-    <h1> Plan your running route </h1> 
-    <div id="map" ></div>
-    <script src="geolocation.js"> </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfIC5CXlJ1mDF7tNITPn6iFPbdV-j2Lbk&callback=initMap">
-    </script>
+
+    <h1> Running Planner </h1>
+    <h2> Use this tool to help you plan out a plan for your morning runs! </h2> 
+    <a href="map_page.html"> ENTER </a>
+    
   </body>
+
 </html>
