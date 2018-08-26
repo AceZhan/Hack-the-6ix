@@ -112,6 +112,7 @@ function runSnapToRoad(path) {
     processSnapToRoadResponse(data);
     drawSnappedPolyline();
     getAndDrawSpeedLimits();
+	calculateDistance();
   });
 }
 
@@ -135,7 +136,8 @@ function drawSnappedPolyline() {
     strokeColor: 'black',
     strokeWeight: 3
   });
-
+  //console.log(snappedCoordinates);
+  console.log(snappedCoordinates[0].lat);
   snappedPolyline.setMap(map);
   polylines.push(snappedPolyline);
 }
@@ -178,7 +180,6 @@ function processSpeedLimitResponse(speedData, start) {
 
     // Take two points for a single-segment polyline.
     var coords = snappedCoordinates.slice(start + i, start + i + 2);
-
     var snappedPolyline = new google.maps.Polyline({
       path: coords,
       strokeColor: color,
@@ -188,7 +189,31 @@ function processSpeedLimitResponse(speedData, start) {
     polylines.push(snappedPolyline);
   }
 }
+function calculateDistance(){
+	totalDistance = 0;
+	console.log(snappedCoordinates.length)
+	for (var i = 0; i < snappedCoordinates.length - 1; i++) {
+		var coords = snappedCoordinates.slice(i, i + 2);
+	//	totalDistance += getDistanceFromLatLonInKm(
+	}
+}
+function getDistanceFromLatLonInKm(lat1,lat2,lon1,lon2) {
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2-lat1);  // deg2rad below
+  var dLon = deg2rad(lon2-lon1); 
+  var a = 
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+    Math.sin(dLon/2) * Math.sin(dLon/2)
+    ; 
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+  var d = R * c; // Distance in km
+  return d;
+}
 
+function deg2rad(deg) {
+  return deg * (Math.PI/180)
+}
 function getColorForSpeed(speed_kph) {
   if (speed_kph <= 40) {
     return 'purple';
