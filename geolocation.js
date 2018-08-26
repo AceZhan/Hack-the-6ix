@@ -5,9 +5,18 @@
       var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 6
+          //Canada 56.1304° N, 106.3468° W
+          center: {lat: 51.2538, lng: -85.3232},
+          zoom: 15
         });
+
+        google.maps.event.addListener(map, "click", function(event) {
+            marker = new google.maps.Marker({
+              position: event.latLng,
+              map: map
+            });
+        });
+
         infoWindow = new google.maps.InfoWindow;
 
         // Try HTML5 geolocation.
@@ -19,9 +28,13 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('You are here.');
             infoWindow.open(map);
             map.setCenter(pos);
+
+            var marker = new google.maps.Marker({position: pos, map: map});
+            
+            
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
