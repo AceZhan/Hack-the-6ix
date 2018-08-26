@@ -12,15 +12,7 @@ function initMap() {
         center: {lat: 51.2538, lng: -85.3232},
         zoom: 15
     });
-
-    //creates marker where user clicks
-    google.maps.event.addListener(map, "click", function(event) {
-        marker = new google.maps.Marker({
-            position: event.latLng,
-            map: map
-        });
-        //destinations.push(marker.position);
-    });
+    infoWindow = new google.maps.InfoWindow;
 
     map.addListener('click', addLatLng);
 
@@ -29,10 +21,7 @@ function initMap() {
         strokeOpacity: 1.0,
         strokeWeight: 3
         });
-        poly.setMap(map);
-
-
-    infoWindow = new google.maps.InfoWindow;
+    poly.setMap(map);
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
