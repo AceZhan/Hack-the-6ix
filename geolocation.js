@@ -2,8 +2,10 @@
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-      var map, infoWindow;
+      var map, infoWindow, marker;
+      var destinations = [];
       function initMap() {
+          //initial position of map
         map = new google.maps.Map(document.getElementById('map'), {
           //Canada 56.1304° N, 106.3468° W
           center: {lat: 51.2538, lng: -85.3232},
@@ -16,8 +18,19 @@
               position: event.latLng,
               map: map
             });
+            //destinations.push(marker.position);
         });
-
+        /*
+        var flightPath = new google.maps.Polyline({
+            path: destinations,
+            geodesic: true,
+            strokeColor: '#FF0000',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        });
+        
+        flightPath.setMap(map);
+        */
         infoWindow = new google.maps.InfoWindow;
 
         // Try HTML5 geolocation.
